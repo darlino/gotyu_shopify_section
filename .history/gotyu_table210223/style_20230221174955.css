@@ -35,6 +35,11 @@ body {
   color: #000;
   vertical-align: middle;
 }
+#table210223 th:nth-child(2) {
+  font-weight: bold;
+  border: 1px solid #000;
+  border-bottom-left-radius: 10px;
+}
 
 #table210223 colgroup:nth-child(1) {
   width: 50%;

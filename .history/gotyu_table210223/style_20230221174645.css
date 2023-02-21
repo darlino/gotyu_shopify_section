@@ -35,6 +35,9 @@ body {
   color: #000;
   vertical-align: middle;
 }
+#table210223 th {
+  font-weight: bold;
+}
 
 #table210223 colgroup:nth-child(1) {
   width: 50%;
@@ -46,6 +49,7 @@ body {
 #table210223 colgroup:nth-child(2) {
   width: 25%;
   border-radius: 10px;
+  border: 2px solid #000;
 }
 
 /* Tablehead */
