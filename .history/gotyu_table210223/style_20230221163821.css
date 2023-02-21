@@ -16,7 +16,7 @@ body {
   float: right;
   width: 40%;
 }
-#table210223 table {
+table {
   width: 100%;
   text-align: left;
   border-spacing: 0;
@@ -27,34 +27,41 @@ body {
   border: none;
 }
 
-#table210223 th,
-#table210223 td {
+th,
+td {
   font-family: inherit;
   font-size: 0.875em;
   line-height: 1.45;
   color: #000;
   vertical-align: middle;
 }
-#table210223 th {
+th {
   font-weight: 600;
 }
 
-#table210223 colgroup:nth-child(1) {
+colgroup:nth-child(1) {
   width: 50%;
   border: 0 none;
 }
-#table210223 colgroup:nth-child(3) {
+colgroup:nth-child(3) {
   width: 25%;
 }
-#table210223 colgroup:nth-child(2) {
+colgroup:nth-child(2) .col-border {
   width: 25%;
   border-radius: 10px;
   border: 2px solid #000;
 }
+.col-border {
+}
+colgroup:nth-child(2) {
+  width: 25%;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
 
 /* Tablehead */
 
-#table210223 thead th {
+thead th {
   text-align: center;
   position: relative;
   background-image: linear-gradient(
@@ -68,7 +75,7 @@ body {
   padding: 10px 0px 10px;
   color: #999;
 }
-#table210223 thead th:nth-child(1) {
+thead th:nth-child(1) {
   background-image: linear-gradient(
     to right,
     black 33%,
@@ -78,25 +85,25 @@ body {
   background-size: 15px 1.2px;
   background-repeat: repeat-x;
 }
-#table210223 thead th h2 {
+thead th h2 {
   font-weight: bold;
   font-size: 15px;
   color: #000;
   padding: 10px 20px 10px 20px;
 }
-#table210223 thead th h2 + p {
+thead th h2 + p {
   font-size: 15px;
 }
 
 /* Tablebody */
 
-#table210223 tbody th span {
+tbody th span {
   text-align: center;
   font-weight: bold;
 
   margin: auto;
 }
-#table210223 tbody td {
+tbody td {
   background-image: linear-gradient(
     to right,
     black 33%,
@@ -107,14 +114,14 @@ body {
   background-repeat: repeat-x;
 }
 
-#table210223 tbody td .icon-wrapper {
+tbody td .icon-wrapper {
   text-align: center;
   width: 25px;
   height: 25px;
   margin: auto;
   padding: 10px;
 }
-#table210223 tbody td .text-wrapper {
+tbody td .text-wrapper {
   text-align: left;
   float: left;
   width: 70%;
@@ -124,7 +131,7 @@ body {
   padding: 10px;
 }
 
-#table210223 tbody td .num {
+tbody td .num {
   text-align: center;
   width: 70%;
   height: auto;
@@ -133,7 +140,7 @@ body {
   padding: 9px;
 }
 
-#table210223 tbody tr:last-child td {
+tbody tr:last-child td {
   border-bottom: 0 none;
   background-image: linear-gradient(to right, transparent 33%, transparent 0%);
   background-position: bottom;
