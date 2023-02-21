@@ -134,7 +134,7 @@
         }
         else {
           let code = promo[0].code
-          let totalPrice = defaultPrice -( defaultPrice * code)/100
+          let totalPrice = defaultPrice - defaultPrice * code/100
           price.innerHTML = totalPrice.toFixed(2)
           reductionCode.innerHTML = code
           console.log(code)
