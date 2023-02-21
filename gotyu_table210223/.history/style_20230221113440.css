@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+  background-color: #f0e4d9;
+}
+
+#table210223 {
+  width: 100%;
+  height: auto;
+}
+
+#table210223 .table-container {
+  max-width: 1300px;
+  display: flex;
+  float: right;
+}

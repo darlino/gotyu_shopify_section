@@ -1,0 +1,143 @@
+body {
+  background: #f0e4d9;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  text-align: center;
+  padding: 4em 2em;
+}
+#table210223 {
+  width: 100%;
+  height: auto;
+}
+
+#table210223 .container {
+  max-width: 1300px;
+  display: flex;
+  float: right;
+  width: 40%;
+}
+table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+  border-collapse: collapse;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+}
+
+th,
+td {
+  font-family: inherit;
+  font-size: 0.875em;
+  line-height: 1.45;
+  color: #000;
+  vertical-align: middle;
+}
+th {
+  font-weight: 600;
+}
+
+colgroup:nth-child(1) {
+  width: 50%;
+  border: 0 none;
+}
+colgroup:nth-child(3) {
+  width: 25%;
+}
+colgroup:nth-child(2) {
+  width: 25%;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+
+/* Tablehead */
+
+thead th {
+  text-align: center;
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    black 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 15px 1.2px;
+  background-repeat: repeat-x;
+  padding: 10px 0px 10px;
+  color: #999;
+}
+thead th:nth-child(1) {
+  background-image: linear-gradient(
+    to right,
+    black 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 15px 1.2px;
+  background-repeat: repeat-x;
+}
+thead th h2 {
+  font-weight: 300;
+  font-size: 15px;
+  color: #000;
+  padding: 10px 20px 10px 20px;
+}
+thead th h2 + p {
+  font-size: 15px;
+}
+
+/* Tablebody */
+
+tbody th span {
+  text-align: center;
+  font-weight: bold;
+
+  margin: auto;
+}
+tbody td {
+  background-image: linear-gradient(
+    to right,
+    black 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 15px 1.2px;
+  background-repeat: repeat-x;
+}
+
+tbody td .icon-wrapper {
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  padding: 9px;
+}
+tbody td .text-wrapper {
+  text-align: left;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  font-weight: bold;
+  padding: 9px;
+}
+
+tbody td .num {
+  text-align: center;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  font-weight: bold;
+  padding: 9px;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0 none;
+  background-image: linear-gradient(to right, transparent 33%, transparent 0%);
+  background-position: bottom;
+  background-size: 15px 1.2px;
+  background-repeat: repeat-x;
+}
+
+/* Tablefooter */
