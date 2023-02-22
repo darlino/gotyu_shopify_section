@@ -118,7 +118,8 @@
         let error_message = document.getElementById("error-message");
         
         let validateValue = inputValue.value.toUpperCase();
-        validateValue = validateValue.replace(/\s+/g, ' ').trim();
+        validateValue = validateValue.split(' ').join('');
+    
         
         const promo = promoCoupons.filter(
           (coupon) => coupon.name.toUpperCase() === validateValue
