@@ -121,8 +121,8 @@
     
         
         const promo = promoCoupons.filter(
-          (coupon) => coupon.name.toUpperCase() === validateValue
-          
+          (coupon) => {coupon.name.toUpperCase() === validateValue
+          console.log(coupon.name.toUpperCase())}
         );
         
         if( promo.length === 0 ){

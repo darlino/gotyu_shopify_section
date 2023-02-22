@@ -121,8 +121,7 @@
     
         
         const promo = promoCoupons.filter(
-          (coupon) => coupon.name.toUpperCase() === validateValue
-          
+          (coupon) => coupon.name.toUpperCase === validateValue
         );
         
         if( promo.length === 0 ){
@@ -140,6 +139,8 @@
           let totalPrice = defaultPrice -(defaultPrice * code)/100
           price.innerHTML = totalPrice.toFixed(2)
           reductionCode.innerHTML = code
+          console.log(code)
+          
         }
       }
     </script>

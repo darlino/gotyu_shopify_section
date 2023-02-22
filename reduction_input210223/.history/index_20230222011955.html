@@ -136,6 +136,7 @@
           }, 3000)
         }
         else {
+          console.log(coupon.name.toUpperCase())
           let code = promo[0].code
           let totalPrice = defaultPrice -(defaultPrice * code)/100
           price.innerHTML = totalPrice.toFixed(2)

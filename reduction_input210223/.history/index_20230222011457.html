@@ -117,12 +117,11 @@
         let inputValue = document.getElementById("reduction");
         let error_message = document.getElementById("error-message");
         
-        const validateValue = inputValue.value.toUpperCase();
-    
+        const validateValue = inputValue.value.toLoweCase();
+        alert(validateValue)
         
         const promo = promoCoupons.filter(
-          (coupon) => coupon.name.toUpperCase() === validateValue
-          
+          (coupon) => coupon.name === inputValue.value
         );
         
         if( promo.length === 0 ){
@@ -140,6 +139,8 @@
           let totalPrice = defaultPrice -(defaultPrice * code)/100
           price.innerHTML = totalPrice.toFixed(2)
           reductionCode.innerHTML = code
+          console.log(code)
+          
         }
       }
     </script>
