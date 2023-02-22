@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="product_select220223">
+      <div class="flex flex-col max-w-[1300px] bg-stone-200 h-screen mx-auto">
+        <div class="flex flex-col w-full space-y-3 mx-auto p-10">
+          <div class="flex flex-col space-y-3">
+            <p class="text-lg font-bold text-left text-purple-800">
+              Marque de téléphone
+            </p>
+            <select
+              name="select_brand"
+              id="select_brand"
+              onchange="getElementSelectedValue()"
+              class="bg-gray-50 w-1/2 border focus:border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-800 block p-2.5 border-gray-600 placeholder-gray-900 text-slate-900 focus:ring-blue-700 focus:border-blue-700 outline-none"
+            >
+              <option class="text-md mb-2" value="Apple">Apple</option>
+              <option class="text-md mb-2" value="Samsung">Samsung</option>
+              <option class="text-md mb-2" value="Xiaomi">Xiaomi</option>
+              <option class="text-md mb-2" value="Iphone">Iphone</option>
+            </select>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <p class="text-lg font-bold text-left text-purple-800">
+              Marque de téléphone
+            </p>
+            <select
+              name="select_brand"
+              onchange="getElementSelectedValue"
+              id="select_model"
+              class="bg-gray-50 w-3/4 border focus:border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-800 block p-2.5 placeholder-gray-900 text-slate-900 focus:ring-blue-700 focus:border-blue-700 outline-none"
+            >
+              <option class="text-md mb-2" value="Mi 10">Modele</option>
+              <option class="text-md mb-2" value="Samsung">Samsung</option>
+              <option class="text-md mb-2" value="Xiaomi">Xiaomi</option>
+              <option class="text-md mb-2" value="Iphone">Iphone</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      function getElementSelectedValue() {
+        const element = document.getElementById("select_brand").value;
+        return element;
+      }
+
+      const modelValue = document.getElementById("select_model");
+      const allModels = [[{}]];
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+      }
+    </script>
+  </body>
+</html>

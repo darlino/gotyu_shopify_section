@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="product_select220223">
+      <div
+        class="flex lg:flex-row flex-col justify-between lg:pt-32 pt-2 max-w-[1300px] bg-stone-200 h-screen mx-auto"
+      >
+        <div
+          class="lg:w-1/3 w-full bg-blue-200"
+          style="
+            background-image: url('./téléchargement-removebg-preview.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: fill;
+            back
+          "
+        ></div>
+        <div
+          class="flex flex-col lg:w-2/3 lg:px-32 w-full space-y-3 mx-auto p-10"
+        >
+          <div class="flex flex-col space-y-3">
+            <p class="text-lg font-bold text-left text-purple-800">
+              Marque de téléphone
+            </p>
+            <select
+              name="select_brand"
+              id="select_brand"
+              onchange="getElementSelectedValue()"
+              class="bg-gray-50 w-1/2 border focus:border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-800 block p-2.5 border-gray-600 placeholder-gray-900 text-slate-900 focus:ring-blue-700 focus:border-blue-700 outline-none"
+            >
+              <option class="text-md mb-2" value="Tecno">Tecno</option>
+              <option class="text-md mb-2" value="Samsung">Samsung</option>
+              <option class="text-md mb-2" value="Xiaomi">Xiaomi</option>
+              <option class="text-md mb-2" value="Iphone">Iphone</option>
+            </select>
+          </div>
+          <div class="flex flex-col space-y-3">
+            <p class="text-lg font-bold text-left text-purple-800">
+              Modèle <span id="text_model"></span>
+            </p>
+            <div class="flex flex-col space-y-1">
+              <select
+                name="select_brand"
+                id="select_model"
+                class="bg-gray-50 w-4/5 border focus:border-2 border-gray-400 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-800 block p-2.5 placeholder-gray-900 text-slate-900 focus:ring-blue-700 focus:border-blue-700 outline-none"
+              ></select>
+              <p class="text-sm p-1 text-slate-600">
+                Information: <span id="information_text"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+      const option = document.createElement("option");
+      const modelValue = document.getElementById("select_model");
+      const modelText = document.getElementById("text_model");
+      const textInformation = document.getElementById("information_text");
+
+      const brandMatchModel = [
+        { brand: "tecno", modelId: 0 },
+        { brand: "samsung", modelId: 1 },
+        { brand: "xiaomi", modelId: 2 },
+        { brand: "iphone", modelId: 3 },
+      ];
+
+      const textInformationMatchBrand = [
+        "Les commandes des coques TECNO sont faciles à la demande, les delais de livraison sont alors allongés de (2 à 4 semaines)",
+        "Les commandes des coques SAMSUNG sont faciles à la demande, les delais de livraison sont alors allongés de (1 à 3 semaines)",
+        "Les commandes des coques XIAOMI sont faciles à la demande, les delais de livraison sont alors allongés de (3 à 7 semaines)",
+        "Les commandes des coques IPHONE sont compliquées à la demande, les delais de livraison sont alors allongés de (5 à 8 semaines)",
+      ];
+
+      const allModels = [
+        [
+          { value: "Pouvoir", text: "Pouvoir" },
+          { value: "Camon", text: "Camon" },
+          { value: "Spark", text: "Spark" },
+        ],
+        [
+          { value: "s7", text: "Samsung galaxy s7" },
+          { value: "s6", text: "Samsung galaxy s6" },
+          { value: "note 10", text: "Samsung galaxy note 10" },
+          { value: "note 9", text: "Samsung galaxy note 9" },
+        ],
+        [
+          { value: "Mi 10", text: "Mi 10" },
+          { value: "Mi 11", text: "Mi 11" },
+        ],
+        [
+          { value: "iphone 8", text: "Iphone 8" },
+          { value: "iphone 8 plus", text: "Iphone 8 +" },
+          { value: "iphone X", text: "Iphone X" },
+          { value: "iphone Xs", text: "Iphone Xs" },
+          { value: "iphone 11", text: "Iphone 11" },
+          { value: "iphone 12 pro", text: "Iphone 12pro" },
+        ],
+      ];
+
+      modelText.innerHTML = brandMatchModel[0].brand;
+      textInformation.innerHTML = textInformationMatchBrand[0];
+
+      for (let index = 0; index < allModels[0].length; index++) {
+        modelValue.options[modelValue.options.length] = new Option(
+          allModels[0][index].text,
+          allModels[0][index].value
+        );
+      }
+
+      const clearSelect = (modelValue) => {
+        while (modelValue.options.length > 0) {
+          modelValue.remove(0);
+        }
+      };
+
+      function getElementSelectedValue() {
+        const element = document.getElementById("select_brand").value;
+
+        const selectedBrandMatchModel = brandMatchModel.filter(
+          (bm) => bm.brand.toLocaleLowerCase() === element.toLocaleLowerCase()
+        );
+        const modelId = selectedBrandMatchModel[0].modelId;
+
+        clearSelect(modelValue);
+
+        modelText.innerHTML = brandMatchModel[modelId].brand;
+        textInformation.innerHTML = textInformationMatchBrand[modelId];
+
+        for (let index = 0; index < allModels[modelId].length; index++) {
+          modelValue.options[modelValue.options.length] = new Option(
+            allModels[modelId][index].value,
+            allModels[modelId][index].text
+          );
+        }
+        console.log(
+          "the selected value is",
+          element,
+          "the brand macth is ",
+          allModels[modelId].length
+        );
+        // for (let index = 0; index < array.length; index++) {
+        //   const element = array[index];
+        // }
+      }
+    </script>
+  </body>
+</html>
